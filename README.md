@@ -1,150 +1,161 @@
 # 🎓 EduTrack — Student Management System
 
-A beginner-friendly full-stack web application to manage students using **HTML, CSS, Vanilla JavaScript, Node.js, Express.js, and Supabase**.
+A beginner-friendly Student Management System developed as a full-stack web application. This project demonstrates frontend development, backend API creation, and database integration in a single repository.
 
----
+## Task Completion
 
-## 📁 Folder Structure
+### Task 1: Frontend
+- Responsive user interface
+- Built using HTML, CSS, and JavaScript
+- Mobile-friendly design
+- User-friendly layout and navigation
 
-```
-student-management-system/
-├── public/                  ← Frontend files (served statically)
-│   ├── index.html           ← Main HTML page
-│   ├── style.css            ← All styles
-│   └── app.js               ← All frontend JavaScript
+### Task 2: Backend API
+- Developed using Node.js and Express.js
+- REST API implementation
+- GET, POST, PUT, and DELETE endpoints
+- Request validation and server-side logic
+
+### Task 3: Database
+- Supabase database integration
+- Student data storage and retrieval
+- CRUD operations
+- Persistent data management
+
+## Features
+
+- Add Student
+- View Students
+- Edit Student Details
+- Delete Student Records
+- Search Students
+- Responsive Design
+- Form Validation
+- Database Integration
+
+## Technology Stack
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- Supabase
+
+## Student Information Fields
+
+Each student record contains:
+
+- Name
+- Email
+- Course
+- Phone Number
+
+## Project Structure
+
+```text
+Student-Hub-System/
 │
-├── server.js                ← Express server + REST API
-├── package.json             ← Project dependencies
-├── .env.example             ← Template for your environment variables
-├── .env                     ← Your actual secrets (DO NOT commit this)
-├── .gitignore               ← Ignores node_modules and .env
-└── README.md                ← This file
+├── public/
+│   ├── index.html
+│   ├── styles.css
+│   └── app.js
+│
+├── server.js
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
----
+## Installation
 
-## 🚀 Setup Instructions
+### Clone Repository
 
-### Step 1 — Create a Supabase Project
-
-1. Go to [https://supabase.com](https://supabase.com) and sign up / log in.
-2. Click **"New Project"** and fill in project details.
-3. Wait for the project to be ready (~1 minute).
-
-### Step 2 — Create the Students Table
-
-1. In your Supabase dashboard, go to **SQL Editor** (left sidebar).
-2. Paste and run this SQL:
-
-```sql
-CREATE TABLE students (
-  id         UUID DEFAULT gen_random_uuid() PRIMARY KEY,
-  name       TEXT        NOT NULL,
-  email      TEXT        NOT NULL UNIQUE,
-  course     TEXT        NOT NULL,
-  phone      TEXT        NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT now()
-);
+```bash
+git clone https://github.com/nivanshii09/Student-Hub-System.git
+cd Student-Hub-System
 ```
 
-> ✅ This creates a `students` table with auto-generated IDs and timestamps.
-
-### Step 3 — Get Your Supabase API Keys
-
-1. In your Supabase project, go to **Settings → API** (left sidebar).
-2. Copy:
-   - **Project URL** → looks like `https://xyz.supabase.co`
-   - **anon / public** key → a long JWT string
-
-### Step 4 — Configure Environment Variables
-
-1. In the project folder, copy the example env file:
-   ```bash
-   cp .env.example .env
-   ```
-
-2. Open `.env` and fill in your Supabase credentials:
-   ```
-   SUPABASE_URL=https://your-project-id.supabase.co
-   SUPABASE_ANON_KEY=your-anon-key-here
-   PORT=3000
-   ```
-
-### Step 5 — Install Dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-### Step 6 — Start the Server
+### Configure Environment Variables
+
+Create a `.env` file and add:
+
+```env
+SUPABASE_URL=your_supabase_url
+SUPABASE_KEY=your_supabase_key
+PORT=3000
+```
+
+### Start Application
 
 ```bash
-# Production
 npm start
-
-# Development (auto-restarts on file changes)
-npm run dev
 ```
 
-### Step 7 — Open in Browser
+or
 
-Visit: [http://localhost:3000](http://localhost:3000)
-
----
-
-## ✨ Features
-
-| Feature         | Description                                      |
-|-----------------|--------------------------------------------------|
-| ➕ Add Student  | Form with validation to add new students         |
-| 👀 View Students | Responsive table showing all students            |
-| ✏️ Edit Student | Pre-filled form to update student details        |
-| 🗑️ Delete Student | Confirmation dialog before deleting              |
-| 🔍 Search       | Live search across name, email, course, phone    |
-
----
-
-## 🔌 REST API Endpoints
-
-| Method | Endpoint              | Description              |
-|--------|-----------------------|--------------------------|
-| GET    | `/api/students`       | Get all students         |
-| GET    | `/api/students?search=john` | Search students   |
-| GET    | `/api/students/:id`   | Get one student by ID    |
-| POST   | `/api/students`       | Create a new student     |
-| PUT    | `/api/students/:id`   | Update a student         |
-| DELETE | `/api/students/:id`   | Delete a student         |
-
-### Example API Request (POST)
-
-```json
-POST /api/students
-Content-Type: application/json
-
-{
-  "name": "Priya Sharma",
-  "email": "priya@example.com",
-  "course": "Computer Science",
-  "phone": "9876543210"
-}
+```bash
+node server.js
 ```
 
+### Open in Browser
+
+```text
+http://localhost:3000
+```
+
+## API Endpoints
+
+| Method | Endpoint | Description |
+|----------|----------|----------|
+| GET | /students | Get all students |
+| GET | /students/:id | Get student by ID |
+| POST | /students | Create new student |
+| PUT | /students/:id | Update student |
+| DELETE | /students/:id | Delete student |
+
+## Learning Outcomes
+
+Through this project, the following concepts were implemented:
+
+- Responsive frontend development
+- RESTful API development
+- Database integration
+- CRUD operations
+- Client-server communication
+- Form validation
+- Full-stack application structure
+
+## Future Improvements
+
+- Authentication system
+- Student profile pages
+- Attendance management
+- Advanced filtering and search
+- Dashboard analytics
+
+## Author
+
+GitHub: :contentReference[oaicite:0]{index=0}
+
 ---
 
-## 🛠️ Tech Stack
+**Internship Project Submission**
 
-- **Frontend**: HTML5, CSS3, Vanilla JavaScript (Fetch API)
-- **Backend**: Node.js, Express.js
-- **Database**: Supabase (PostgreSQL)
-- **Auth/Config**: dotenv
+This repository contains the implementation of all three required tasks:
+- Frontend Development
+- Backend API Development
+- Database Integration
 
----
-
-## 🧯 Troubleshooting
-
-| Problem | Solution |
-|--------|----------|
-| `Cannot GET /` | Make sure server is running: `npm start` |
-| `Error connecting to Supabase` | Check your `.env` values are correct |
-| Students not loading | Open browser console (F12) for error details |
-| Email duplicate error | Supabase enforces unique emails per the table schema |
+All requirements have been completed within a single full-stack project repository.
